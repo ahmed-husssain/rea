@@ -140,8 +140,8 @@ override for the 25000 ms request deadline or the 256-candidate discovery
 budget. Those limits do not follow `REA_BRIDGE_MAX_REQUEST_BYTES`.
 
 Discovery reads session descriptors from the bridge directory. Both the plugin
-and client resolve this location from `REA_CUTTER_BRIDGE_DIR` with a leading
-`~` expanded. Unset, both default to `%LOCALAPPDATA%\REA\CutterBridge` on
+and client resolve this location from `REA_CUTTER_BRIDGE_DIR` with an exact
+`~` or leading `~/` (or `~\` on Windows) expanded. Unset, both default to `%LOCALAPPDATA%\REA\CutterBridge` on
 Windows when `LOCALAPPDATA` is set and `~/.cache/rea/cutter-bridge` otherwise.
 A value visible to only one process makes discovery look in a different
 directory from the one the plugin writes to.
